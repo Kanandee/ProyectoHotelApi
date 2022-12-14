@@ -1,9 +1,10 @@
 {
   "development": {
     "username": "root",
-    "password": null,
-    "database": "database_development",
+    "password": "1234",
+    "database": "Apihotel",
     "host": "127.0.0.1",
+    "port": 3307,
     "dialect": "mysql"
   },
   "test": {
@@ -15,9 +16,11 @@
   },
   "production": {
     "username": "root",
-    "password": null,
-    "database": "database_production",
-    "host": "127.0.0.1",
+    "password": "aWz8k5mPPTpAr0wFOBLm",
+    "database": "railway",
+    "host": "containers-us-west-166.railway.app",
+    "port": 7493,
+    "user_env_variable":"MYSQL_URL",
     "dialect": "mysql"
   }
 }

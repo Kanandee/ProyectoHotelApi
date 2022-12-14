@@ -17,11 +17,11 @@ class Hotels extends Sequelize.Model {
       allowNull: true
     },
     fechaEntrada: {
-      type: DataTypes.DATE,
+      type: DataTypes.STRING(255),
       allowNull: true
     },
     fechaSalida: {
-      type: DataTypes.DATE,
+      type: DataTypes.STRING(255),
       allowNull: true
     }
   }, {
