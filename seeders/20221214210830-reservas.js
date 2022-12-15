@@ -14,9 +14,9 @@ module.exports = {
 
     await queryInterface.bulkInsert('Reservas', [{
 
-      id_Clientes: 5,
+      id_clientes: 18,
 
-      id_hotel: 8,
+      id_hotel: 27,
 
       importe: 130 ,
 
@@ -24,9 +24,9 @@ module.exports = {
 
     {
 
-      id_Clientes: 6,
+      id_clientes: 19,
 
-      id_hotel: 7,
+      id_hotel: 25,
 
       importe: 90 ,
 
@@ -34,9 +34,9 @@ module.exports = {
 
     {
 
-      id_Clientes: 7,
+      id_clientes: 20,
 
-      id_hotel: 5,
+      id_hotel: 26,
 
       importe: 200 ,
 
@@ -44,9 +44,9 @@ module.exports = {
 
     {
 
-      id_Clientes: 8,
+      id_clientes: 17,
 
-      id_hotel: 6,
+      id_hotel: 28,
 
       importe: 250 ,
 
@@ -63,9 +63,9 @@ module.exports = {
 
     await queryInterface.bulkDelete('Reservas', [{
 
-      id_Clientes: 5,
+      id_clientes: 18,
 
-      id_hotel: 8,
+      id_hotel: 27,
 
       importe: 130 ,
 
@@ -73,9 +73,9 @@ module.exports = {
 
     {
 
-      id_Clientes: 6,
+      id_clientes: 19,
 
-      id_hotel: 7,
+      id_hotel: 25,
 
       importe: 90 ,
 
@@ -83,9 +83,9 @@ module.exports = {
 
     {
 
-      id_Clientes: 7,
+      id_clientes: 20,
 
-      id_hotel: 5,
+      id_hotel: 26,
 
       importe: 200 ,
 
@@ -93,9 +93,9 @@ module.exports = {
 
     {
 
-      id_Clientes: 8,
+      id_clientes: 17,
 
-      id_hotel: 6,
+      id_hotel: 28,
 
       importe: 250 ,
 
