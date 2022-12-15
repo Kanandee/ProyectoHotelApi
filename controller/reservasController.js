@@ -26,7 +26,7 @@ ReservasController.getById = async (req, res) => {
    const id = req.params.id;
    try {
       const data = await Reservas.findByPk(id, {
-         //include :[{ model:Hotels,as:"id_hotel_Hotel"},{model:Clientes,as:"id_clientes_Cliente"},]
+         include :[{ model:Hotels,as:"id_hotel_Hotel"},{model:Clientes,as:"id_clientes_Cliente"},]
       });
       if (data) {
          res.json(data);
@@ -43,10 +43,10 @@ ReservasController.getById = async (req, res) => {
 };
 
 ReservasController.getByCliente = async (req, res) => {
-   const name = req.params.cliente;
+   const cliente = req.params.cliente;
    try {
       const data = await Reservas.findAll({
-         //where: { Nombre: { [Op.like]: `%${name}%` } },
+         where: { id_clientes: { [Op.like]: `%${cliente}%` } },
          include :[{ model:Hotels,as:"id_hotel_Hotel"},{model:Clientes,as:"id_clientes_Cliente"},]
       });
 
@@ -54,54 +54,34 @@ ReservasController.getByCliente = async (req, res) => {
          res.json(data);
       } else {
          res.status(404).send({
-            message: `No se puede encontrar la reserva del cliente=${name}`,
+            message: `No se puede encontrar la reserva del cliente=${cliente}`,
          });
       }
    } catch (error) {
       res.status(500).send({
-         message: `Ha ocurrido un error y no se puede encontrar la reserva del cliente=${name}.`,
+         message: `Ha ocurrido un error y no se puede encontrar la reserva del cliente=${cliente}.`,
       });
    }
 };
 
 ReservasController.getByHotel = async (req, res) => {
-   const inDate = req.params.indate;
+   const hotel = req.params.hotel;
    try {
       const data = await Reservas.findAll({
-         where: { hotel: { [Op.like]: `%${namehotel}%` } },
+         where: { id_hotel: { [Op.like]: `%${hotel}%` } },
          include :[{ model:Hotels,as:"id_hotel_Hotel"},{model:Clientes,as:"id_clientes_Cliente"},]
       });
-      if (data) {
-         res.json(data);
-      } else {
-         res.status(404).send({
-            message: `No se puede encontrar la reserva del hotel=${namehotel}`,
-         });
-      }
-   } catch (error) {
-      res.status(500).send({
-         message: `Ha ocurrido un error y no se puede encontrar la reserva del hotel=${namehotel}`,
-      });
-   }
-};
 
-ReservasController.getByImporte = async (req, res) => {
-   const outDate = req.params.outdate;
-   try {
-      const data = await Reservas.findAll({
-         where: { importe: { [Op.like]: `%${importe}%` } },
-         iinclude :[{ model:Hotels,as:"id_hotel_Hotel"},{model:Clientes,as:"id_clientes_Cliente"},]
-      });
-      if (data) {
+      if (data.length > 0) {
          res.json(data);
       } else {
          res.status(404).send({
-            message: `No se puede encontrar la reserva con el importe=${importe}`,
+            message: `No se puede encontrar la reserva del cliente=${hotel}`,
          });
       }
    } catch (error) {
       res.status(500).send({
-         message: `Ha ocurrido un error y no se encuentra la reserva con el importe=${importe}`,
+         message: `Ha ocurrido un error y no se puede encontrar la reserva del cliente=${hotel}.`,
       });
    }
 };
