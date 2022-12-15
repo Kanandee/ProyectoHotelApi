@@ -1,12 +1,12 @@
 const { Reservas, Hotels, Clientes } = require("../models.js");
 const { Op } = require("sequelize");
 
-const ReservasController = {}; "id_hotel_Hotel"
+const ReservasController = {};
 
 ReservasController.getAll = async (req, res) => {
    try {
       const data = await Reservas.findAll({
-         include :[{ model:Hotels,as:"id_hotel_Hotel",include:{model:Clientes,as:"id_clientes_Cliente"}}]
+         include :[{ model:Hotels,as:"id_hotel_Hotel"},{model:Clientes,as:"id_clientes_Cliente"},]
       });
       if (data) {
          res.json(data);
@@ -24,12 +24,10 @@ ReservasController.getAll = async (req, res) => {
 
 ReservasController.getById = async (req, res) => {
    const id = req.params.id;
-
    try {
       const data = await Reservas.findByPk(id, {
-         include :[{ model:Hotels,as:"id_hotel_Hotel",include:{model:Clientes,as:"id_clientes_Cliente"}}]
+         //include :[{ model:Hotels,as:"id_hotel_Hotel"},{model:Clientes,as:"id_clientes_Cliente"},]
       });
-
       if (data) {
          res.json(data);
       } else {
@@ -45,12 +43,11 @@ ReservasController.getById = async (req, res) => {
 };
 
 ReservasController.getByCliente = async (req, res) => {
-   const name = req.params.name;
-
+   const name = req.params.cliente;
    try {
       const data = await Reservas.findAll({
-         where: { cliente: { [Op.like]: `%${name}%` } },
-         include :[{ model:Hotels,as:"id_hotel_Hotel",include:{model:Clientes,as:"id_clientes_Cliente"}}]
+         //where: { Nombre: { [Op.like]: `%${name}%` } },
+         include :[{ model:Hotels,as:"id_hotel_Hotel"},{model:Clientes,as:"id_clientes_Cliente"},]
       });
 
       if (data.length > 0) {
@@ -72,7 +69,7 @@ ReservasController.getByHotel = async (req, res) => {
    try {
       const data = await Reservas.findAll({
          where: { hotel: { [Op.like]: `%${namehotel}%` } },
-         include :[{ model:Hotels,as:"id_hotel_Hotel",include:{model:Clientes,as:"id_clientes_Cliente"}}]
+         include :[{ model:Hotels,as:"id_hotel_Hotel"},{model:Clientes,as:"id_clientes_Cliente"},]
       });
       if (data) {
          res.json(data);
@@ -93,7 +90,7 @@ ReservasController.getByImporte = async (req, res) => {
    try {
       const data = await Reservas.findAll({
          where: { importe: { [Op.like]: `%${importe}%` } },
-         include :[{ model:Hotels,as:"id_hotel_Hotel",include:{model:Clientes,as:"id_clientes_Cliente"}}]
+         iinclude :[{ model:Hotels,as:"id_hotel_Hotel"},{model:Clientes,as:"id_clientes_Cliente"},]
       });
       if (data) {
          res.json(data);
