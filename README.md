@@ -21,8 +21,8 @@ npm install
 ## End Points
 <h3>Para clientes</h3>
 
-| Get  | ruta | Clientes|
-| ------------- | ------------- | ------------- |
+| Get  | ruta |
+| ------------- | ------------- |
 | Get | /clientes
 | Get | /clientes /id /:id 
 | Get  | /clientes/name /:name  
@@ -32,8 +32,8 @@ npm install
 
 <h3>Para hoteles</h3>
 
-| Get  | ruta | Hoteles|
-| ------------- | ------------- | ------------- |
+| Get  | ruta |
+| ------------- | ------------- | 
 | Get | /hoteles  
 | Get | /hoteles /:id  
 | Get | /hoteles /name/:name
@@ -43,8 +43,8 @@ npm install
 
 <h3>Para reservas</h3>
 
-| Get  | ruta | Reservas|
-| ------------- | ------------- |------------- |
+| Get  | ruta | 
+| ------------- | ------------- |
 | Get | /reservas
 | Get | /reservas /id /:id
 | Get | /reservas/cliente/:id_cliente
