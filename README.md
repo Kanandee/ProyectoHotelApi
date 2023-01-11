@@ -24,31 +24,31 @@ npm install
 | Get  | ruta | Clientes|
 | ------------- | ------------- | ------------- |
 | Get | /clientes
-| Get | /clientes  | /id /:id   
-| Get  | /clientes   | /name /:name 
-| Get | /clientes   | /dni /:dni 
-| Get  | /clientes   | /email/:email 
-| Get | /clientes  | /telefono/:telefono
+| Get | /clientes /id /:id 
+| Get  | /clientes/name /:name  
+| Get | /clientes/dni /:dni 
+| Get  | /clientes /email/:email 
+| Get | /clientes /telefono/:telefono
 
 <h3>Para hoteles</h3>
 
 | Get  | ruta | Hoteles|
 | ------------- | ------------- | ------------- |
 | Get | /hoteles  
-| Get | /hoteles  | /:id |
-| Get | /hoteles  | /name/:name 
-| Get  | /hoteles  | /fechaEntrada /:date  
-| Get | /hoteles   | /fechaSalida/:date
+| Get | /hoteles /:id  
+| Get | /hoteles /name/:name
+| Get  | /hoteles/fechaEntrada /:date    
+| Get | /hoteles/fechaSalida/:date   
 
 
 <h3>Para reservas</h3>
 
 | Get  | ruta | Reservas|
-| ------------- | ------------- | ------------- |
-| Get | /reservas 
-| Get | /reservas   | /id /:id 
-| Get | /reservas   | /cliente/:id_cliente  
-| Get  | /reservas   | /hotel/:id_hotel 
+| ------------- | ------------- |------------- |
+| Get | /reservas
+| Get | /reservas /id /:id
+| Get | /reservas/cliente/:id_cliente
+| Get  | /reservas/hotel/:id_hotel  
 
 ## Creado con
 
